@@ -1,0 +1,21 @@
+.contacts {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: space-around;
+    align-content: center
+}
+
+.col {
+    display: flex;
+    justify-content: space-around;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
