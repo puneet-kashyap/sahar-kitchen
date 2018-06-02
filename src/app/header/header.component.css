@@ -11,3 +11,11 @@ navbar {
   color: white;
   padding: 20px;
 }
+
+.navbar-brand{
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
