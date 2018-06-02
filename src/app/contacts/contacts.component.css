@@ -1,8 +1,11 @@
 .contacts {
-    background-color: #f3f3f3;
     display: flex;
     justify-content: space-around;
-    align-content: center
+    align-content: center;
+    color: white;
+    padding: 20px;
+    background-image: url('https://www.freewebheaders.com/wordpress/wp-content/gallery/food/food-header-image.jpg');
+    background-size: cover;
 }
 
 .col {
@@ -18,4 +21,16 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .example-container > * {
+    width: 100%;
+  }
+  
+.store-hours{
+    text-align: center;
+}
