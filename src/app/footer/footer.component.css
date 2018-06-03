@@ -1,24 +1,9 @@
-.example-icon {
-    padding: 0 14px;
-  }
-
-.example-spacer {
-    flex: 1 1 auto;
-}
-
-.toolbar {
-  height: auto;
-  align-items: flex-start;
-  padding: 50px;
-  justify-content: center;
-}
-
 h2{
   font-size: medium;
 }
 
 .footer{
-  background-color: #3f51b5;
+  background-color:#881b0f;
   color: white;
   padding: 20px;
 }
