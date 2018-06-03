@@ -1,0 +1,9 @@
+.row {
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.menu-card{
+    padding: 10px;
+    max-width: 100vh;
+}

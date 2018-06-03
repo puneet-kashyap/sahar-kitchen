@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+  
+navbar {
+  padding: 50px;
+  color: white;
+  padding: 20px;
+}
+
+.navbar-brand{
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+a{
+  color: white;
+}

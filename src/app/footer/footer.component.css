@@ -1,0 +1,14 @@
+h2{
+  font-size: medium;
+}
+
+.footer{
+  background-color:#881b0f;
+  color: white;
+  padding: 20px;
+}
+
+.footer-col{
+  text-align: center;
+  padding: 50px;
+}
