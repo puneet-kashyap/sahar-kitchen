@@ -350,21 +350,21 @@ export class MenuService {
               itemPrice: '2.00',
               itemDescription: ''
             },
-            {
-              itemName: 'Rose Syrup',
-              itemPrice: '2.00',
-              itemDescription: ''
-            },
-            {
-              itemName: 'Rice Pudding',
-              itemPrice: '2.00',
-              itemDescription: ''
-            },
-            {
-              itemName: 'Rasmalai',
-              itemPrice: '3.00',
-              itemDescription: ''
-            }
+            // {
+            //   itemName: 'Rose Syrup',
+            //   itemPrice: '2.00',
+            //   itemDescription: ''
+            // },
+            // {
+            //   itemName: 'Rice Pudding',
+            //   itemPrice: '2.00',
+            //   itemDescription: ''
+            // },
+            // {
+            //   itemName: 'Rasmalai',
+            //   itemPrice: '3.00',
+            //   itemDescription: ''
+            // }
           ]
         },
       ]

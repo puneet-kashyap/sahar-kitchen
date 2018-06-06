@@ -24,6 +24,11 @@ export class MenuComponent implements OnInit {
     this.items = this.menuService.getMiles();
   }
 
+  menuOrder(event: MouseEvent){
+    console.log('Menu item clicked');
+    console.log(event);
+    
+  }
 
   menus = [
     {

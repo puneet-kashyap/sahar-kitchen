@@ -7,18 +7,33 @@
   </div>
 </div> -->
 
-<div class="row">
+<div class="row menu-row">
   <div class="col-sm-6 menu-block" *ngFor='let category of items'>
     <div class="menu-category rounded">
         <h3>{{category.type}}</h3>
         <div *ngFor = 'let item of category.items'>
-            <h6 class="item">
+          <div class="row">
+              <div class="col">
+                  <h6 class="item">
+                      {{item.itemName}}
+                      <span class="spacer"></span>
+                  </h6>
+                  <span class="subtext">{{item.itemDescription}}</span>
+              </div>
+              <div class="col-xs-auto price-col text-center">
+                <span>$ {{item.itemPrice}}</span>
+                <br>
+                <button mat-raised-button (click)="menuOrder(item)">Order it</button>
+              </div>
+          </div>
+
+            <!-- <h6 class="item">
                 {{item.itemName}}
                 <span class="spacer"></span>
                 {{item.itemPrice}}
             </h6>
             <span class="subtext">{{item.itemDescription}}</span>
-            <hr>
+            <hr> -->
         </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-.row {
+.menu-row {
     /* margin: 5px; */
     justify-content: space-evenly;
     background-color: brown;
@@ -23,9 +23,6 @@
     line-height: 1;
 }
 
-.menu-block{
-}
-
 h3{
     text-align: center;
     margin: 20px;
@@ -41,3 +38,12 @@ h3{
     display: flex;
     flex-wrap: wrap;
 } */
+
+.mat-raised-button{
+    min-width: 5px;
+    margin: 5px;
+}
+
+.price-col{
+    padding: 0px 5px;
+}
