@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +20,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomeComponent } from './home/home.component';
+import { MenuPopupComponent } from './menu/menu-popup/menu-popup.component';
 
 const appRoutes: Routes = [
   {
@@ -49,8 +51,10 @@ const appRoutes: Routes = [
     ContactsComponent,
     MenuComponent,
     ReservationComponent,
-    HomeComponent
+    HomeComponent,
+    MenuPopupComponent
   ],
+  entryComponents: [MenuPopupComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,
@@ -62,6 +66,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
+    MatDialogModule,
     RouterModule.forRoot(
       appRoutes
     )

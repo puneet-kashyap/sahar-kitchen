@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import * as firebase from 'firebase';
 import { MenuService } from './menu.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MenuPopupComponent} from '../menu/menu-popup/menu-popup.component';
 
 @Component({
   selector: 'app-menu',
@@ -18,40 +20,45 @@ export class MenuComponent implements OnInit {
     }[]
   }[] = [];
   
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private menuService: MenuService,
+    public dialog: MatDialog
+  ) { }
+
   ngOnInit() {
     window.scroll(0,0);
     this.items = this.menuService.getMiles();
   }
 
-  menuOrder(event: MouseEvent){
-    console.log('Menu item clicked');
-    console.log(event);
-    
+  menuOrder(order){
+    console.log(order);
+    let dialogRef = this.dialog.open(MenuPopupComponent, {
+      height: '400px',
+      width: '600px',
+      data: { name: order.itemName, price: order.itemPrice}
+    });
   }
 
-  menus = [
-    {
-      'img':"../../assets/images/menu-1.jpeg",
-      'alt':'Menu1'
-    },
-    {
-      'img':"../../assets/images/menu-2.jpeg",
-      'alt':'Menu2'
-    },
-    {
-      'img':"../../assets/images/menu-3.jpeg",
-      'alt':'Menu3'
-    },
-    {
-      'img':"../../assets/images/menu-4.jpeg",
-      'alt':'Menu4'
-    },
-    {
-      'img':"../../assets/images/menu-5.jpeg",
-      'alt':'Menu5'
-    },
-    
-  ]
-
+  // menus = [
+  //   {
+  //     'img':"../../assets/images/menu-1.jpeg",
+  //     'alt':'Menu1'
+  //   },
+  //   {
+  //     'img':"../../assets/images/menu-2.jpeg",
+  //     'alt':'Menu2'
+  //   },
+  //   {
+  //     'img':"../../assets/images/menu-3.jpeg",
+  //     'alt':'Menu3'
+  //   },
+  //   {
+  //     'img':"../../assets/images/menu-4.jpeg",
+  //     'alt':'Menu4'
+  //   },
+  //   {
+  //     'img':"../../assets/images/menu-5.jpeg",
+  //     'alt':'Menu5'
+  //   },
+  // ]
 }

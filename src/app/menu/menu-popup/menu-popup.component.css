@@ -1,0 +1,18 @@
+.order{
+    padding: 10px;
+}
+
+input{
+    max-width: 50px;
+    text-align: center;
+}
+
+mat-icon{
+    margin: 10px;
+}
+
+#quantity{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
