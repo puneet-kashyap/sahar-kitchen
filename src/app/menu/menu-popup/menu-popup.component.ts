@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-menu-popup',
@@ -12,7 +13,8 @@ export class MenuPopupComponent implements OnInit {
   quantity: number = 1;
 
   constructor(public dialogRef: MatDialogRef<MenuPopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any){}
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private cartService: CartService){}
 
   ngOnInit() {
     this.orderName = this.data.name;
@@ -34,8 +36,11 @@ export class MenuPopupComponent implements OnInit {
   }
 
   addToCart(){
-    console.log(`${this.orderName} added to cart. Total quantity is ${this.quantity}`);
-    console.log(`Total cost of this order is ${this.orderPrice * this.quantity}`)
+    this.cartService.addToCart({
+      name: this.orderName,
+      price: this.orderPrice,
+      quantity: this.quantity
+    });
   }
 
 }

@@ -11,6 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    MatBadgeModule,
     RouterModule.forRoot(
       appRoutes
     )

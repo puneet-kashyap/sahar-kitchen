@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   companyName = "Sahar's Kitchen";
-
-  constructor() { }
+  orders = 1;
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }
@@ -20,5 +21,12 @@ export class HeaderComponent implements OnInit {
   onRestaurantMenu(){
     console.log('Restaurant menu icon clicked');
   }
+
+  showBadge(){
+    if(this.orders > 0){
+      return true;
+    }    
+  }
+  
 
 }

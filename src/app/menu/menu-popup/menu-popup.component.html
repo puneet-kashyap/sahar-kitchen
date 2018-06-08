@@ -17,6 +17,8 @@
   Are you sure?
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="addToCart()" mat-dialog-close>Yes</button>
   <button mat-raised-button [mat-dialog-close]="true">No</button>
+  <button mat-raised-button color="primary" (click)="addToCart()" 
+  mat-dialog-close>
+  Yes</button>
 </mat-dialog-actions>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as firebase from 'firebase';
 import { MenuService } from './menu.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {MenuPopupComponent} from '../menu/menu-popup/menu-popup.component';
 
 @Component({
