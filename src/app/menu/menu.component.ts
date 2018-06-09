@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
   }
 
   menuOrder(order){
-    console.log(order);
+    // console.log(order);
     let dialogRef = this.dialog.open(MenuPopupComponent, {
       height: '400px',
       width: '600px',

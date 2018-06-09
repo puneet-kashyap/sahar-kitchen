@@ -8,11 +8,17 @@ import { CartService } from '../cart.service';
 })
 export class HeaderComponent implements OnInit {
   companyName = "Sahar's Kitchen";
-  orders = 1;
-  constructor(private cartService: CartService) { }
+  orders;
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-  }
+    this.cartService.getOrders.subscribe(
+      order => {
+        this.orders = order;
+        console.log(this.orders);
+      }
+    )
+  };
 
   onMenu(){
     console.log('Menu icon clicked');
@@ -22,11 +28,17 @@ export class HeaderComponent implements OnInit {
     console.log('Restaurant menu icon clicked');
   }
 
-  showBadge(){
-    if(this.orders > 0){
-      return true;
-    }    
+  cartBadge(){
+    if(this.orders){
+      return this.orders.length;
+    }
+    return 0;
   }
-  
+
+  hideBadge(){
+    if(!this.orders){
+      return true;  
+    }
+  };
 
 }
