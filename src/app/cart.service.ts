@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-
-  orders: Order[] = [];
-
+  cartOrders=[];
+  orders: Order;
   getOrders = new Subject();
 
   constructor() { }
 
   addToCart(order){
-    this.orders.push(order);
-    this.getOrders.next(this.orders);
+    this.getOrders.next(order);
+    this.cartOrders.push(order);
   }
+
+  getCartOrders(): Observable<Order[]>{
+    this.getOrders.subscribe(
+      order => {
+        console.log(order);
+        return order;
+      }
+    )
+    return;
+  };
 
 }
 

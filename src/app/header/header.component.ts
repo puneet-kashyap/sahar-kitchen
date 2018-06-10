@@ -8,14 +8,13 @@ import { CartService } from '../cart.service';
 })
 export class HeaderComponent implements OnInit {
   companyName = "Sahar's Kitchen";
-  orders;
+  orders:{}[]=[];
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
     this.cartService.getOrders.subscribe(
       order => {
-        this.orders = order;
-        console.log(this.orders);
+        this.orders.push(order);
       }
     )
   };

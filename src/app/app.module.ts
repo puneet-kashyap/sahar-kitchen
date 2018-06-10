@@ -22,6 +22,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomeComponent } from './home/home.component';
 import { MenuPopupComponent } from './menu/menu-popup/menu-popup.component';
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   {
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     data: { title: "Sahar's Kitchen Reservation"}
   },
   { path: 'menu', component: MenuComponent },
-  { path: 'contact',component: ContactsComponent }
+  { path: 'contact',component: ContactsComponent },
+  { path: 'cart', component: CartComponent }
 ]
 
 @NgModule({
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     MenuComponent,
     ReservationComponent,
     HomeComponent,
-    MenuPopupComponent
+    MenuPopupComponent,
+    CartComponent
   ],
   entryComponents: [MenuPopupComponent],
   imports: [

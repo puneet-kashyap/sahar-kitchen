@@ -1,0 +1,36 @@
+<div class="cart container">
+
+  <div class="row">
+    <div class="col">
+        <h3>Your Order</h3>
+    </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-6">
+        <h5>Item</h5>
+      </div>
+      <div class="col-3">
+          <h5>Quantity</h5>
+      </div>
+      <div class="col-3">
+          <h5>Price</h5>
+      </div>
+  </div>
+
+  <div class="row" *ngFor='let order of cartOrders; let i = index' >
+      <div class="col-6">
+          <p>{{order.name}}</p>
+        </div>
+        <div class="col-3" id="quantity">
+            <mat-icon (click)="incrementQuantity(i)">add_circle</mat-icon>
+            <input value={{order.quantity}}>
+            <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
+        </div>
+        <div class="col-3">
+            <p>{{order.price}}</p>
+        </div>
+  </div>
+  
+  <button mat-raised-button (click)="testButton()">Check out</button>
+</div>
