@@ -9,37 +9,29 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   orders:{}[]=[];
   cartOrders=[];
-  quantity: number = 1;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    // this.cartService.getOrders.subscribe(
-    //   order => {
-    //     console.log(order);
-    //     this.orders.push(order);
-    //     console.log(this.orders);
-    //   }
-    // )
     this.cartOrders = this.cartService.cartOrders;
   };
 
   incrementQuantity(index){
     this.cartOrders[index].quantity++;
+    this.itemPrice(index);
   }
 
   decrementQuantity(index){
     if(this.cartOrders[index].quantity > 0){
-      this.cartOrders[index].quantity--
+      this.cartOrders[index].quantity--;
     }
+    this.itemPrice(index);
   }
 
-  setOrders(order){
-    return order;
-  }
-
-  getOrders(){
-    return this.orders;
+  itemPrice(index){
+    let unitPrice = parseFloat(this.cartOrders[index].price);
+    let price = this.cartOrders[index].quantity * unitPrice;
+    this.cartOrders[index].newPrice = price.toFixed(2).toString();    
   }
 
 }
