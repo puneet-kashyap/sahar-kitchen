@@ -9,11 +9,18 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   orders:{}[]=[];
   cartOrders=[];
+  totalPrice:number = 0;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.cartOrders = this.cartService.cartOrders;
+    if(this.totalPrice == 0){
+      this.cartOrders.forEach( (item) => {
+        item.newPrice = (item.quantity * parseFloat(item.price));
+        this.totalPrice = this.totalPrice + parseFloat(item.price);
+      })
+    }
   };
 
   incrementQuantity(index){
@@ -31,7 +38,18 @@ export class CartComponent implements OnInit {
   itemPrice(index){
     let unitPrice = parseFloat(this.cartOrders[index].price);
     let price = this.cartOrders[index].quantity * unitPrice;
-    this.cartOrders[index].newPrice = price.toFixed(2).toString();    
+    this.cartOrders[index].newPrice = price.toFixed(2).toString();
+    this.grandTotal();
+  }
+
+  grandTotal(){
+    let itemTotals = 0;
+    this.cartOrders.forEach( (item) => {
+      if(item.newPrice){
+        itemTotals = itemTotals + parseFloat(item.newPrice);
+      }
+    });
+    this.totalPrice = itemTotals;
   }
 
 }

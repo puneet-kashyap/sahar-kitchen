@@ -1,16 +1,16 @@
-<div class="cart container">
-
+<div class="container">
+<mat-card>
   <div class="row">
-    <div class="col">
+    <div class="col cart-header">
         <h3>Your Order</h3>
     </div>
   </div>
   
-  <div class="row">
-      <div class="col-6">
+  <div class="row order-header">
+      <div class="col-5">
         <h5>Item</h5>
       </div>
-      <div class="col-3">
+      <div class="col-4">
           <h5>Quantity</h5>
       </div>
       <div class="col-3">
@@ -18,11 +18,11 @@
       </div>
   </div>
 
-  <div class="row" *ngFor='let order of cartOrders; let i = index' >
-      <div class="col-6">
+  <div class="row order-item" *ngFor='let order of cartOrders; let i = index' >
+      <div class="col-5">
           <p>{{order.name}}</p>
         </div>
-        <div class="col-3" id="quantity">
+        <div class="col-4" id="quantity">
             <mat-icon (click)="incrementQuantity(i)">add_circle</mat-icon>
             <input value={{order.quantity}}>
             <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
@@ -30,7 +30,12 @@
         <div class="col-3">
             <p>$ {{order.newPrice ? order.newPrice : order.price}}</p>
         </div>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
   </div>
   
-  <button mat-raised-button (click)="testButton()">Check out</button>
+  <button color="primary" mat-raised-button id="checkOutButton" (click)="checkOut()">
+      Check out</button>
+      <div>{{totalPrice.toFixed(2)}}</div>
+      
+    </mat-card>
 </div>

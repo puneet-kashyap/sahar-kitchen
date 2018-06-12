@@ -1,18 +1,41 @@
-.cart {
+.cart, h3 {
     text-align: center;
+    padding: 20px;
 }
 
 .row{
     text-align: start;
 }
 
+.cart-header{
+    margin: 10px;
+}
+
 input{
-    max-width: 50px;
+    max-width: 30px;
     text-align: center;
 }
 
 #quantity{
-    padding: 5px;
+    padding: 1px 5px;
     display: flex;
     align-items: center;
+}
+
+#checkOutButton{
+    margin: 50px 10px 20px 10px;
+}
+
+.order-item {
+    padding: 5px;
+    align-items: flex-start;
+}
+
+.order-header{
+    padding: 25px 0px;
+}
+
+.container, .col-3{
+    padding: 0px;
+    text-align: center;
 }
