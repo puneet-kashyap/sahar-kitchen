@@ -24,6 +24,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { HomeComponent } from './home/home.component';
 import { MenuPopupComponent } from './menu/menu-popup/menu-popup.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckOutComponent } from './cart/check-out/check-out.component';
 
 const appRoutes: Routes = [
   {
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     ReservationComponent,
     HomeComponent,
     MenuPopupComponent,
-    CartComponent
+    CartComponent,
+    CheckOutComponent
   ],
   entryComponents: [MenuPopupComponent],
   imports: [

@@ -33,9 +33,12 @@
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
   </div>
   
-  <button color="primary" mat-raised-button id="checkOutButton" (click)="checkOut()">
-      Check out</button>
+  <button color="primary" mat-raised-button id="checkOutButton" 
+    (click)="checkOut()" [disabled]="!totalPrice">
+      Check out
+    </button>
       <div>{{totalPrice.toFixed(2)}}</div>
       
     </mat-card>
 </div>
+<app-check-out *ngIf="showCheckOut"></app-check-out>

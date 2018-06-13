@@ -10,6 +10,7 @@ export class CartComponent implements OnInit {
   orders:{}[]=[];
   cartOrders=[];
   totalPrice:number = 0;
+  showCheckOut;
 
   constructor(private cartService: CartService) { }
 
@@ -50,6 +51,10 @@ export class CartComponent implements OnInit {
       }
     });
     this.totalPrice = itemTotals;
+  }
+
+  checkOut(){
+    this.showCheckOut=true;
   }
 
 }
