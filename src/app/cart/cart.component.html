@@ -32,12 +32,17 @@
         </div>
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
   </div>
-  
-  <button color="primary" mat-raised-button id="checkOutButton" 
+
+    <div class="total-price row">
+        <h5>
+            Total Price: $ {{totalPrice.toFixed(2)}}
+        </h5>
+    </div>
+
+    <button color="primary" mat-raised-button id="checkOutButton" 
     (click)="checkOut()" [disabled]="!totalPrice">
       Check out
     </button>
-      <div>{{totalPrice.toFixed(2)}}</div>
       
     </mat-card>
 </div>

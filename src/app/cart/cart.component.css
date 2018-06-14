@@ -23,7 +23,7 @@ input{
 }
 
 #checkOutButton{
-    margin: 50px 10px 20px 10px;
+    margin: 20px;
 }
 
 .order-item {
@@ -38,4 +38,9 @@ input{
 .container, .col-3{
     padding: 0px;
     text-align: center;
+}
+
+.total-price{
+    justify-content: center;
+    margin: 50px 10px 10px;
 }
