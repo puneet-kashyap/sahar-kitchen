@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   companyName = "Sahar's Kitchen";
-
-  constructor() { }
+  orders:{}[]=[];
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-  }
+    this.cartService.getOrders.subscribe(
+      order => {
+        this.orders.push(order);
+      }
+    )
+  };
 
   onMenu(){
     console.log('Menu icon clicked');
@@ -20,5 +26,18 @@ export class HeaderComponent implements OnInit {
   onRestaurantMenu(){
     console.log('Restaurant menu icon clicked');
   }
+
+  cartBadge(){
+    if(this.orders){
+      return this.orders.length;
+    }
+    return 0;
+  }
+
+  hideBadge(){
+    if(!this.orders){
+      return true;  
+    }
+  };
 
 }

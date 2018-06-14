@@ -19,3 +19,13 @@ navbar {
 a{
   color: white;
 }
+
+mat-icon{
+  color: white;
+  padding-left: 5px;
+}
+
+.cart {
+  color: white;
+  display: flex;
+}
