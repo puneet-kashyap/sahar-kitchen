@@ -15,11 +15,12 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.cartOrders = this.cartService.cartOrders;
     if(this.totalPrice == 0){
       this.cartOrders.forEach( (item) => {
-        item.newPrice = (item.quantity * parseFloat(item.price));
-        this.totalPrice = this.totalPrice + parseFloat(item.price);
+        item.newPrice = (item.quantity * parseFloat(item.price)).toFixed(2).toString();
+        this.grandTotal();
       })
     }
   };
@@ -55,6 +56,9 @@ export class CartComponent implements OnInit {
 
   checkOut(){
     this.showCheckOut=true;
+    console.table(this.cartOrders);
+    this.cartService.cartOrders = this.cartOrders;
+    return false;
   }
 
 }

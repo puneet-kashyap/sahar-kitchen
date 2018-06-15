@@ -28,7 +28,7 @@
             <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
         </div>
         <div class="col-3">
-            <p>$ {{order.newPrice ? order.newPrice : order.price}}</p>
+            <p>$ {{order.newPrice}}</p>
         </div>
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
   </div>

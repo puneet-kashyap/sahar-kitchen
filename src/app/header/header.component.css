@@ -29,3 +29,29 @@ mat-icon{
   color: white;
   display: flex;
 }
+
+.container{
+  background-color: #881b0f;
+}
+
+.row{
+  padding: 25px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+  width: -webkit-fill-available;
+  z-index: 2;
+  background-color: #881b0f;
+}
+
+.second-row{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1px 25px 10px 25px;
+}
+
+.first-row{
+  padding: 25px 25px 5px 25px;
+}
