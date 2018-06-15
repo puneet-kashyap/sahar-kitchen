@@ -17,7 +17,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LocationComponent } from './location/location.component';
+import { LocationComponent } from './contacts/location/location.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReservationComponent } from './reservation/reservation.component';
