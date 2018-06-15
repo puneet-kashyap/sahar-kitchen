@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuPopupComponent } from './menu/menu-popup/menu-popup.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckOutComponent } from './cart/check-out/check-out.component';
+import { OrderConfirmationComponent } from './cart/order-confirmation/order-confirmation.component';
 
 const appRoutes: Routes = [
   {
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
   },
   { path: 'menu', component: MenuComponent },
   { path: 'contact',component: ContactsComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'orders', component: OrderConfirmationComponent }
 ]
 
 @NgModule({
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MenuPopupComponent,
     CartComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    OrderConfirmationComponent
   ],
   entryComponents: [MenuPopupComponent],
   imports: [

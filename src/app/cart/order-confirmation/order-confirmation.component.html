@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+      <div class="col-4">
+        <h5>Item</h5>
+      </div>
+      <div class="col-4">
+        <h5>Quantity</h5>
+      </div>
+      <div class="col-4">
+          <h5>Price</h5>
+      </div>
+  </div>
+
+  <div class="orders" *ngFor="let order of cartOrders" >
+    <div class="row">
+      <div class="col-4">
+        <p>{{order.name}}</p>
+      </div>
+      <div class="col-4">
+        <p>{{order.quantity}}</p>
+      </div>
+      <div class="col-4">
+        <p>{{order.newPrice}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
