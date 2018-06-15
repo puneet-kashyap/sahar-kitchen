@@ -1,37 +1,21 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #881b0f;">
-  <h2>
-    <a routerLink="/" routerLinkActive="active">Sahar's Kitchen</a>
-  </h2>  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!-- <mat-icon [matBadgeHidden]="hideBadge()" [matBadge]="cartBadge()">shopping_cart</mat-icon> -->
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <span class="example-spacer"></span>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/reservations" routerLinkActive="active">Reservation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  routerLink="/menu" routerLinkActive="active">Menu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  routerLink="/orders" routerLinkActive="active">Orders</a>
-      </li>
-    </ul>
+<div class="containers sticky">
+  <div class="row first-row">
+    <h2>
+      <a routerLink="/" routerLinkActive="active">Sahar's Kitchen</a>
+    </h2>
     <span class="example-spacer"></span>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+    <a class="nav-link cart" routerLink="/cart" routerLinkActive="active">
+      <span>Cart</span>
+      <mat-icon [matBadgeHidden]="hideBadge()" [matBadge]="cartBadge()">shopping_cart</mat-icon>
+    </a>  
   </div>
-  <a class="nav-link cart" routerLink="/cart" routerLinkActive="active">
-    <span>Cart</span>
-    <mat-icon [matBadgeHidden]="hideBadge()" [matBadge]="cartBadge()">shopping_cart</mat-icon>
-  </a>
-</nav>
+  <div class="row second-row">
+      <a routerLink="/" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+      <a  routerLink="/menu" routerLinkActive="active">Menu</a>
+      <a routerLink="/orders" routerLinkActive="active">My Orders</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+    </div>
+</div>
+  
+
 

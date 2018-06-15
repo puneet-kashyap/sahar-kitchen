@@ -8,12 +8,17 @@ import { CartService } from '../../cart.service';
 })
 export class OrderConfirmationComponent implements OnInit {
   cartOrders;
+  itemTotals = 0;
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.cartOrders = this.cartService.cartOrders;
     console.table(this.cartOrders);
-    
+    this.cartOrders.forEach((item) => {
+      if(item.newPrice){
+        this.itemTotals = this.itemTotals + parseFloat(item.newPrice);
+      }
+    })
   }
 
 }
