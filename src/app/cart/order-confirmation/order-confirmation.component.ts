@@ -12,6 +12,7 @@ export class OrderConfirmationComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.cartOrders = this.cartService.cartOrders;
     console.table(this.cartOrders);
     this.cartOrders.forEach((item) => {

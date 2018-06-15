@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.cartOrders = this.cartService.cartOrders;
     if(this.totalPrice == 0){
       this.cartOrders.forEach( (item) => {
