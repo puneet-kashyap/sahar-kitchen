@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
   entryComponents: [MenuPopupComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,

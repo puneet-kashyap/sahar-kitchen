@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-check-out',
@@ -10,6 +11,11 @@ export class CheckOutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scroll(0,0);
+  }
+
+  onSubmit(form:NgForm){
+    console.log(form);
   }
 
 }
