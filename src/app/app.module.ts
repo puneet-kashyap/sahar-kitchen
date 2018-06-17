@@ -15,6 +15,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -83,6 +85,8 @@ const appRoutes: Routes = [
     MatBadgeModule,
     MatDividerModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
     RouterModule.forRoot(
       appRoutes
     )
