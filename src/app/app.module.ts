@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatBadgeModule,
     MatDividerModule,
+    MatDatepickerModule,
     RouterModule.forRoot(
       appRoutes
     )
