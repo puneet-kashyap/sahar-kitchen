@@ -1,20 +1,47 @@
-<div class="example-container col-sm-6">
-    <form action="">
-        <mat-form-field>
-                <input matInput placeholder="Name">
-            </mat-form-field>
-            <mat-form-field>
-                    <input matInput placeholder="Email">
-                </mat-form-field>
-            <mat-form-field>
-                <textarea matInput placeholder="Textarea"></textarea>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-select placeholder="Select">
-                <mat-option value="option">Option</mat-option>
-                </mat-select>
-            </mat-form-field>
-    </form>
+<div class="container">
 
-</div>
+        <div class="row check-out">
+            <mat-card>
+              <h3>Make a Reservation</h3>
       
+                <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      
+                    <mat-form-field class="example-full-width">
+                      <input ngModel name="name" matInput placeholder="Your Name" required>
+                    </mat-form-field>
+      
+                    <mat-form-field class="example-full-width">
+                      <input ngModel name="email" matInput placeholder="Email" required>
+                    </mat-form-field>
+      
+                    <mat-form-field class="example-full-width">
+                      <input ngModel name="phone" matInput placeholder="Phone" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <input ngModel name="partySize" matInput placeholder="Party Size" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>   
+                    </mat-form-field>
+                          
+                          
+                  
+                    <mat-form-field class="example-full-width">
+                      <textarea ngModel name="comment" matInput placeholder="Leave a comment"></textarea>
+                    </mat-form-field>
+            
+                    <button mat-raised-button type="submit" color="primary" 
+                      routerLink="/orders" routerLinkActive="active">
+                      Reserve Now
+                    </button>
+      
+                  </form>
+      
+            </mat-card>
+        </div>
+        
+      </div>

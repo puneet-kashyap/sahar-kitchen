@@ -13,7 +13,7 @@ before_script:
 script:
     - echo "Deploying !"
     - yarn
-    - yarn build
+    - ng build --prod
 
 install:
     - npm install -g firebase-tools
