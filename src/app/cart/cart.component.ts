@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
   cartOrders=[];
   totalPrice:number = 0;
   showCheckOut;
+  colWidth='12';
 
   constructor(private cartService: CartService) { }
 
@@ -58,6 +59,7 @@ export class CartComponent implements OnInit {
     this.showCheckOut=true;
     console.table(this.cartOrders);
     this.cartService.cartOrders = this.cartOrders;
+    this.colWidth = 'md-6';
     return false;
   }
 
