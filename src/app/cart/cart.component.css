@@ -1,14 +1,15 @@
-.cart, h3 {
+.cart{
     text-align: center;
     padding: 20px;
 }
 
-.row{
-    text-align: start;
+h3{
+    text-align: center;
+    color: #3f51b5;
 }
 
-.cart-header{
-    margin: 10px;
+.center{
+    text-align: start;
 }
 
 input{
@@ -43,4 +44,12 @@ input{
 .total-price{
     justify-content: center;
     margin: 50px 10px 10px;
+}
+
+.order-col{
+    margin: 10px;
+}
+
+.submitButton{
+    text-align: center;
 }
