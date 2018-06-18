@@ -1,60 +1,59 @@
 <div class="container">
     <div class="row">
-            <div class="col">
-                    <app-check-out *ngIf="showCheckOut"></app-check-out>
-            </div>
-        
-            <div class="col-{{colWidth}} order-col" >
-                    <mat-card>
-                            <div class="row center">
-                              <div class="col">
-                                  <h3>Your Order</h3>
-                              </div>
-                            </div>
-                            
-                            <div class="row center order-header">
-                                <div class="col-5">
-                                  <h5>Item</h5>
-                                </div>
-                                <div class="col-4">
-                                    <h5>Quantity</h5>
-                                </div>
-                                <div class="col-3">
-                                    <h5>Price</h5>
-                                </div>
-                            </div>
-                          
-                            <div class="row center order-item" *ngFor='let order of cartOrders; let i = index' >
-                                <div class="col-5">
-                                    <p>{{order.name}}</p>
-                                  </div>
-                                  <div class="col-4" id="quantity">
-                                      <mat-icon (click)="incrementQuantity(i)">add_circle</mat-icon>
-                                      <input value={{order.quantity}}>
-                                      <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
-                                  </div>
-                                  <div class="col-3">
-                                      <p>$ {{order.newPrice}}</p>
-                                  </div>
-                                  <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-                            </div>
-                          
-                              <div class="total-price row">
-                                  <h5>
-                                      Total Price: $ {{totalPrice.toFixed(2)}}
-                                  </h5>
-                              </div>
-                              <div class="submitButton">
-                                    <button [hidden]="showCheckOut" color="primary" mat-raised-button id="checkout" 
-                                    (click)="checkOut()" [disabled]="!totalPrice">
-                                      Check out
-                                    </button>
-                              </div>
-                              
-                                
-                              </mat-card>
-            </div>
+        <div class="col">
+            <app-check-out *ngIf="showCheckOut"></app-check-out>
+        </div>
+
+        <div class="col-{{colWidth}} order-col">
+            <mat-card>
+                <div class="row center">
+                    <div class="col">
+                        <h3>Your Order</h3>
+                    </div>
+                </div>
+
+                <div class="row center order-header">
+                    <div class="col-5">
+                        <h5>Item</h5>
+                    </div>
+                    <div class="col-4">
+                        <h5>Quantity</h5>
+                    </div>
+                    <div class="col-3">
+                        <h5>Price</h5>
+                    </div>
+                </div>
+
+                <div class="row center order-item" *ngFor='let order of cartOrders; let i = index'>
+                    <div class="col-5">
+                        <p>{{order.name}}</p>
+                    </div>
+                    <div class="col-4" id="quantity">
+                        <mat-icon (click)="incrementQuantity(i)">add_circle</mat-icon>
+                        <input value={{order.quantity}}>
+                        <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
+                    </div>
+                    <div class="col-3">
+                        <p>$ {{order.newPrice}}</p>
+                    </div>
+                    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+                </div>
+
+                <div class="total-price row">
+                    <h5>
+                        Total Price: $ {{totalPrice.toFixed(2)}}
+                    </h5>
+                </div>
+                <div class="submitButton">
+                    <button [hidden]="showCheckOut" color="primary" mat-raised-button id="checkout" (click)="checkOut()" [disabled]="!totalPrice">
+                        Check out
+                    </button>
+                </div>
+
+
+            </mat-card>
+        </div>
     </div>
-    
+
 
 </div>

@@ -9,26 +9,26 @@
                 <div>
                     Order:
                 </div>
-                <b>{{orderName}}</b> <br> 
-                Price: <b>${{orderPrice}}</b>
+                <b>{{orderName}}</b>
+                <br> Price:
+                <b>${{orderPrice}}</b>
             </div>
 
             <div id="quantity">
-               Quantity: 
-               <mat-icon (click)="incrementQuantity()">add_circle</mat-icon>
-               <span>{{quantity}}</span>
-               <!-- <input value={{quantity}}> -->
-               <mat-icon (click)="decrementQuantity()">remove_circle</mat-icon>
+                Quantity:
+                <mat-icon (click)="incrementQuantity()">add_circle</mat-icon>
+                <span>{{quantity}}</span>
+                <!-- <input value={{quantity}}> -->
+                <mat-icon (click)="decrementQuantity()">remove_circle</mat-icon>
             </div>
-            
+
             Are you sure?
-          </mat-dialog-content>
-          <mat-dialog-actions>
+        </mat-dialog-content>
+        <mat-dialog-actions>
             <button mat-raised-button [mat-dialog-close]="true">No</button>
-            <button mat-raised-button color="primary" (click)="addToCart()" 
-            mat-dialog-close>
-            Yes</button>
-          </mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="addToCart()" mat-dialog-close>
+                Yes</button>
+        </mat-dialog-actions>
     </div>
-    
+
 </div>

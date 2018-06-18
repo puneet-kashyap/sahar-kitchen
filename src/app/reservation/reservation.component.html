@@ -1,52 +1,52 @@
 <div class="container">
 
-        <div class="row check-out">
-            <mat-card>
-              <h3>Make a Reservation</h3>
-      
-                <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-      
-                    <mat-form-field class="example-full-width">
-                      <input ngModel name="name" matInput placeholder="Your Name" required>
-                    </mat-form-field>
-      
-                    <mat-form-field class="example-full-width">
-                      <input class="form-control" minlength="4" ngModel name="email" type="email" matInput placeholder="Email" required>
-                    </mat-form-field>
-      
-                    <mat-form-field class="example-full-width">
-                      <input ngModel type="tel" name="phone" matInput placeholder="Phone" required>
-                    </mat-form-field>
+  <div class="row check-out">
+    <mat-card>
+      <h3>Make a Reservation</h3>
 
-                    <mat-form-field class="example-full-width">
-                        <input ngModel type="number" name="partySize" matInput placeholder="Party Size" required>
-                    </mat-form-field>
+      <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-                    <mat-form-field class="example-full-width">
-                        <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>   
-                    </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input ngModel name="name" matInput placeholder="Your Name" required>
+        </mat-form-field>
 
-                    <mat-form-field class="example-full-width">
-                      <mat-select placeholder="Choose a time">
-                        <mat-option *ngFor="let time of times" [value]="time">
-                          {{ time }}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                                            
-                    <mat-form-field class="example-full-width">
-                      <textarea ngModel name="comment" matInput placeholder="Leave a comment"></textarea>
-                    </mat-form-field>
-            
-                    <button mat-raised-button type="submit" color="primary" >
-                      Reserve Now
-                    </button>
-      
-                  </form>
-      
-            </mat-card>
-        </div>
-        
-      </div>
+        <mat-form-field class="example-full-width">
+          <input class="form-control" minlength="4" ngModel name="email" type="email" matInput placeholder="Email" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input ngModel type="tel" name="phone" matInput placeholder="Phone" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input ngModel type="number" name="partySize" matInput placeholder="Party Size" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Choose a time">
+            <mat-option *ngFor="let time of times" [value]="time">
+              {{ time }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <textarea ngModel name="comment" matInput placeholder="Leave a comment"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="primary">
+          Reserve Now
+        </button>
+
+      </form>
+
+    </mat-card>
+  </div>
+
+</div>
