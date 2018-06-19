@@ -8,15 +8,23 @@ import { NgForm } from '@angular/forms';
 })
 export class ReservationComponent implements OnInit {
   times = ['11:30 am', '12:00 pm', '01:00 pm', '01:30 pm', '02:00 pm', '02:30 pm',
-          '05:00 pm', '06:00 pm', '07:00 pm', '08:00 pm', '09:00 pm', '10:00 pm'];
+    '05:00 pm', '06:00 pm', '07:00 pm', '08:00 pm', '09:00 pm', '10:00 pm'];
+
+  submitted = false;
+  submittedForm;
 
   constructor() { }
 
   ngOnInit() {
+    window.scroll(0, 0);
   }
 
-  onSubmit(form:NgForm){
+  onSubmit(form: NgForm) {
     console.log(form);
+    if (form.valid) {
+      this.submittedForm = form.value;
+      this.submitted = true;
+    }
   }
 
 }
