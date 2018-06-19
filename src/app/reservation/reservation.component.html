@@ -1,50 +1,69 @@
 <div class="container">
 
-  <div class="row check-out">
+  <div class="row reservation">
     <mat-card>
-      <h3>Make a Reservation</h3>
+      <div *ngIf="!submitted">
+        <h3>Make a Reservation</h3>
 
-      <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-        <mat-form-field class="example-full-width">
-          <input ngModel name="name" matInput placeholder="Your Name" required>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input ngModel name="name" minlength="3" matInput placeholder="Your Name" required>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input class="form-control" minlength="4" ngModel name="email" type="email" matInput placeholder="Email" required>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input class="form-control" ngModel name="email" type="email" matInput placeholder="Email" required email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input ngModel type="tel" name="phone" matInput placeholder="Phone" required>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input ngModel type="tel" name="phone" minlength="10" matInput placeholder="Phone" required>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input ngModel type="number" name="partySize" matInput placeholder="Party Size" required>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input ngModel type="text" name="partySize" matInput placeholder="Party Size" required>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-select placeholder="Choose a time">
-            <mat-option *ngFor="let time of times" [value]="time">
-              {{ time }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-select ngModel placeholder="Choose a time" name="time">
+              <mat-option *ngFor="let time of times" [value]="time">
+                {{ time }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <textarea ngModel name="comment" matInput placeholder="Leave a comment"></textarea>
-        </mat-form-field>
+          <mat-form-field class="full-width">
+            <textarea ngModel name="comments" matInput placeholder="Leave a comment"></textarea>
+          </mat-form-field>
 
-        <button mat-raised-button type="submit" color="primary">
-          Reserve Now
-        </button>
+          <button mat-raised-button type="submit" color="primary">
+            Reserve Now
+          </button>
 
-      </form>
+        </form>
+      </div>
+
+      <div *ngIf="submitted" class="thanks">
+        <h3>Thank You.</h3>
+        <p>Your reservation has been confirmed with following details:</p>
+        <div class="details">
+              
+          <h5><b>Name:</b> {{submittedForm.name}}</h5>
+          <h5><b>Email:</b> {{submittedForm.email}}</h5>
+          <h5><b>Phone:</b> {{submittedForm.phone}}</h5>
+          <h5><b>Size:</b> {{submittedForm.partySize}}</h5>
+          <h5><b>Date:</b> {{submittedForm.date | date}}</h5>
+          <h5><b>Time:</b> {{submittedForm.time}}</h5>
+          <h5><b>Comments:</b> {{submittedForm.comments}}</h5>
+        </div>
+
+      </div>
+
 
     </mat-card>
   </div>
