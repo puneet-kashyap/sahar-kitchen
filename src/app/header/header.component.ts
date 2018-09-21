@@ -7,7 +7,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  companyName = "Sahar's Kitchen";
+  companyName = "Kohinoor Restaurant";
   orders:{}[]=[];
   constructor(private cartService: CartService) {}
 

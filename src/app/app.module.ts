@@ -35,17 +35,17 @@ const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { title: "Sahar's Kitchen"}
+    data: { title: "Kohinoor Restaurant"}
   },
   {
     path: 'location',
     component: LocationComponent,
-    data: { title: "Sahar's Kitchen Location"}
+    data: { title: "Kohinoor Restaurant Location"}
   },
   {
     path: 'reservations',
     component: ReservationComponent,
-    data: { title: "Sahar's Kitchen Reservation"}
+    data: { title: "Kohinoor Restaurant Reservation"}
   },
   { path: 'menu', component: MenuComponent },
   { path: 'contact',component: ContactsComponent },
