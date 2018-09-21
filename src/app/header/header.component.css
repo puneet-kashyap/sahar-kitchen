@@ -38,6 +38,15 @@ mat-icon{
   padding: 25px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
+}
+
 .sticky {
   position: sticky;
   top: 0px;
@@ -49,9 +58,50 @@ mat-icon{
 .second-row{
   display: flex;
   justify-content: space-evenly;
-  padding: 1px 25px 10px 25px;
+  padding: 10px 25px 10px 25px;
+  color: wheat;
+  background-color: brown;
 }
 
-.first-row{
+.second-row:hover {
+  background-color: black;
+}
+
+.first-row {
   padding: 25px 25px 5px 25px;
+  color: white;
+  max-height: 30vh; 
+}
+
+#logo-name {
+  animation-name: moveInRight;
+  animation-duration: 3s;
+}
+
+@keyframes moveInLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  80%{
+    transform: translateX(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0%{
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  80%{
+    transform: translateX(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
 }
