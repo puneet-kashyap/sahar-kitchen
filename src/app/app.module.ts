@@ -17,7 +17,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -87,6 +87,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    MatSnackBarModule,
     RouterModule.forRoot(
       appRoutes
     )
