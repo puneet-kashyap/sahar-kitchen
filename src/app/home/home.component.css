@@ -9,3 +9,8 @@
     background-image: url(../../assets/images/fire.jpg);
     background-size: cover;
 }
+
+.carousel {
+    display: flex;
+    justify-content: center;
+}
