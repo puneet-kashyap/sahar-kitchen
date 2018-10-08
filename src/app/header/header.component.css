@@ -1,7 +1,3 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-  
 navbar {
   padding: 50px;
   color: white;
@@ -16,7 +12,7 @@ navbar {
   color: white;
 }
 
-a{
+a {
   color: white;
 }
 
@@ -68,16 +64,18 @@ a:hover {
 }
 
 .first-row {
+  display: flex;
   padding: 25px 25px 5px 25px;
   color: white;
   max-height: 30vh;
+  justify-content: space-between;
   align-items: center;
 }
 
 #logo-name {
   animation-name: moveInRight;
   animation-duration: 3s;
-  max-width: 80vh;
+  max-width: 65%;
 }
 
 @keyframes moveInLeft {
@@ -105,11 +103,5 @@ a:hover {
   100%{
     opacity: 1;
     transform: translate(0);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #logo-name {
-    font-size: 7vw;
   }
 }
