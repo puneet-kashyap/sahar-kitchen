@@ -1,0 +1,11 @@
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+    transform: none !important;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    width: 100%;
+}

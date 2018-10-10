@@ -18,6 +18,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -31,6 +32,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckOutComponent } from './cart/check-out/check-out.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { OrderConfirmationComponent } from './cart/order-confirmation/order-confirmation.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const appRoutes: Routes = [
   {
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'contact',component: ContactsComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'orders', component: OrderConfirmationComponent }
+  { path: 'orders', component: OrderConfirmationComponent },
+  { path: 'gallery', component: GalleryComponent }
 ]
 
 @NgModule({
@@ -68,7 +71,8 @@ const appRoutes: Routes = [
     CartComponent,
     CheckOutComponent,
     CarouselComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    GalleryComponent
   ],
   entryComponents: [MenuPopupComponent],
   imports: [
@@ -90,6 +94,7 @@ const appRoutes: Routes = [
     MatNativeDateModule,
     MatAutocompleteModule,
     MatSnackBarModule,
+    NgxGalleryModule,
     RouterModule.forRoot(
       appRoutes
     )
