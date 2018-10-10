@@ -26,7 +26,7 @@ mat-icon{
   display: flex;
 }
 
-.container{
+.container-fluid {
   background-color: #881b0f;
 }
 
@@ -48,7 +48,6 @@ a:hover {
   top: 0px;
   width: -webkit-fill-available;
   z-index: 2;
-  background-color: #881b0f;
 }
 
 .second-row{
