@@ -40,11 +40,17 @@
           <mat-form-field class="full-width">
             <textarea ngModel name="comments" matInput placeholder="Leave a comment"></textarea>
           </mat-form-field>
-
-          <button mat-raised-button type="submit" color="primary">
+          <re-captcha
+            ngModel
+            name="captcha"
+            class="captcha"
+            required
+            (resolved)="resolved($event)" 
+            siteKey="6LccyHQUAAAAAPGFE6xQ4szcOJ9F7aH29jKVx6LF">
+          </re-captcha>
+          <button mat-raised-button type="submit" color="primary" [disabled]="!f.valid">
             Reserve Now
           </button>
-
         </form>
       </div>
 
@@ -61,7 +67,6 @@
           <h5><b>Time:</b> {{submittedForm.time}}</h5>
           <h5><b>Comments:</b> {{submittedForm.comments}}</h5>
         </div>
-
       </div>
 
 

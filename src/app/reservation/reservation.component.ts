@@ -19,11 +19,16 @@ export class ReservationComponent implements OnInit {
     window.scroll(0, 0);
   }
 
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response`);
+  }
+
   onSubmit(form: NgForm) {
-    console.log(form);
+    // console.log(form);
     if (form.valid) {
       this.submittedForm = form.value;
       this.submitted = true;
+      window.scroll(0,0);
     }
   }
 
