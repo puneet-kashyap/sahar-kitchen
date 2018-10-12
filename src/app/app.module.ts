@@ -19,6 +19,8 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -95,6 +97,8 @@ const appRoutes: Routes = [
     MatAutocompleteModule,
     MatSnackBarModule,
     NgxGalleryModule,
+    RecaptchaFormsModule,
+    RecaptchaModule.forRoot(),
     RouterModule.forRoot(
       appRoutes
     )

@@ -32,3 +32,9 @@ h3{
   text-align: justify;
   color: #1b5069;
 }
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
