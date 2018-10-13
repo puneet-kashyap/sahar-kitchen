@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-reservation',
@@ -12,6 +13,7 @@ export class ReservationComponent implements OnInit {
 
   submitted = false;
   submittedForm;
+  captchaKey=environment.captchaKey;
 
   constructor() { }
 
