@@ -35,6 +35,7 @@ import { CheckOutComponent } from './cart/check-out/check-out.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { OrderConfirmationComponent } from './cart/order-confirmation/order-confirmation.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { ChatComponent } from './chat/chat.component';
 
 const appRoutes: Routes = [
   {
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
   { path: 'contact',component: ContactsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'orders', component: OrderConfirmationComponent },
-  { path: 'gallery', component: GalleryComponent }
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'chat', component: ChatComponent }
 ]
 
 @NgModule({
@@ -74,7 +76,8 @@ const appRoutes: Routes = [
     CheckOutComponent,
     CarouselComponent,
     OrderConfirmationComponent,
-    GalleryComponent
+    GalleryComponent,
+    ChatComponent
   ],
   entryComponents: [MenuPopupComponent],
   imports: [
