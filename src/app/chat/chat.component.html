@@ -1,3 +1,39 @@
-<p>
-  Hello
-</p>
+<div class="container">
+
+  <div class="col-md-8 chat-col">
+    <mat-card>
+      <div>
+        <h3 id="chat-title">Chat with us</h3>
+
+        <form class="chat-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div #scrollMe class="chat-box">
+            <div class='message-block' *ngFor='let message of chatMessages; let last = last'>
+              <div class='message-group'>
+                <div [class]="message.msgFrom == 'user' ? 'user-block' : 'bot-block' ">
+                  <img [class]="message.msgFrom == 'user' ? 'img-user' : 'img-bot' " [alt]="message.msgFrom == 'user' ? 'User' : 'Bot' " />
+                  <div [class]="message.msgFrom == 'user' ? 'user-message' : 'bot-message' ">
+                    {{message.msg}} {{last ? scrollToBottom() : ''}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-input">
+            <mat-form-field>
+              <textarea ngModel name="msg" cdkTextareaAutosize matInput autocomplete='msg' placeholder="Enter your message" required></textarea>
+            </mat-form-field>
+
+            <button type="submit" mat-button color="primary">
+              Send
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </mat-card>
+  </div>
+
+</div>

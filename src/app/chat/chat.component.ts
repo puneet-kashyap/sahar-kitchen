@@ -1,4 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewChecked,
+  ElementRef
+} from "@angular/core";
+import { NgForm } from "@angular/forms";
 import io from "socket.io-client";
 
 @Component({
@@ -6,9 +13,20 @@ import io from "socket.io-client";
   templateUrl: "./chat.component.html",
   styleUrls: ["./chat.component.css"]
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, AfterViewChecked {
+  @ViewChild("scrollMe")
+  private myScrollContainer: ElementRef;
   constructor() {}
+
+  inputMsg: string = "";
+  chatMessages: {}[] = [];
+
   socket = io("http://localhost:3000", { transports: ["websocket"] });
+
+  scrollToBottom() {
+    this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+  }
+  ngAfterViewChecked() {}
 
   ngOnInit() {
     this.socket.on("connect", () => {
@@ -19,4 +37,12 @@ export class ChatComponent implements OnInit {
       });
     });
   }
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.chatMessages.push({ msg: form.value.msg, msgFrom: "user" });
+      this.socket.emit("message",form.value.msg);
+      form.resetForm();
+    }
+}
 }
