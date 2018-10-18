@@ -19,7 +19,6 @@ export class FirebaseService {
     this.db.collection(collection).add(dataObj)
       .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
-        console.log(dataObj);
       }).catch(function (error) {
         console.error("Error adding document: ", error);
       });
