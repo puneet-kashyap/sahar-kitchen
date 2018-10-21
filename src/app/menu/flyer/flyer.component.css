@@ -7,3 +7,18 @@
 img {
     padding: 5px 0px;
 }
+
+.flyer {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-direction: column
+}
+
+
+@media only screen and (min-width: 600px) {
+    .img-div {
+        display: flex;
+        justify-content: center;
+    }
+}
