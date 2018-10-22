@@ -5,9 +5,8 @@ const sendEmail = require("./email");
 admin.initializeApp(functions.config().firebase);
 
 const recipientEmailIDs = [
-    functions.config().email.id,
-    // functions.config().email.recipient1,
-    // functions.config().email.recipient2
+    functions.config().email.recipient1,
+    functions.config().email.recipient2
 ]
 
 exports.sendReservationsInfo = functions.firestore
