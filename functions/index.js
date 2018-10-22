@@ -1,8 +1,19 @@
-const functions = require('firebase-functions');
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const sendEmail = require("./email");
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+admin.initializeApp(functions.config().firebase);
+
+const recipientEmailIDs = [
+    functions.config().email.recipient1,
+    functions.config().email.recipient2
+]
+
+exports.sendReservationsInfo = functions.firestore
+  .document("/Reservations/{order}")
+  .onCreate((snap, context) => {
+    console.log("New Entry added");
+    const original = snap.data();
+    console.log("Values", original);
+    sendEmail(recipientEmailIDs, original);
+  });

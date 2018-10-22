@@ -1,6 +1,5 @@
 .menu {
     text-align: center;
-    /* padding: 5px; */
     color: #881b0f;
 }
 
@@ -11,7 +10,6 @@ img {
 .flyer {
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
     flex-direction: column
 }
 

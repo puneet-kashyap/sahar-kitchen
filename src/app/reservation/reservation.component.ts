@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { environment } from '../../environments/environment';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-reservation',
@@ -15,7 +16,7 @@ export class ReservationComponent implements OnInit {
   submittedForm;
   captchaKey=environment.captchaKey;
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -26,11 +27,12 @@ export class ReservationComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    // console.log(form);
+    // console.log(form.value);
     if (form.valid) {
       this.submittedForm = form.value;
       this.submitted = true;
       window.scroll(0,0);
+      this.firebaseService.writeToDatabase("Reservations",form.value);
     }
   }
 
