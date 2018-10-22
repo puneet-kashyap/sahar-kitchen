@@ -6,7 +6,9 @@ import * as firebase from 'firebase';
 })
 export class FirebaseService {
 
-  constructor() { }
+  constructor() { 
+    firebase.firestore().settings({ timestampsInSnapshots: true });
+  }
   config = {
     apiKey: "AIzaSyCbFzEgQzl4cKq-8pKK8oO8iQg5J0mQR9U",
     projectId: "sahar-kitchen",
