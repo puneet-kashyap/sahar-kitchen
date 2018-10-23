@@ -15,7 +15,7 @@ export class ReservationComponent implements OnInit {
   submitted = false;
   submittedForm;
   captchaKey=environment.captchaKey;
-
+  minDate = new Date();
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
