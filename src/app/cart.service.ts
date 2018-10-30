@@ -8,7 +8,7 @@ export class CartService {
   cartOrders=[];
   orders: Order;
   getOrders = new Subject();
-
+  grandTotalPrice:string;
   constructor() { }
 
   addToCart(order){

@@ -39,9 +39,13 @@ export class CheckOutComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.cartOrders = this.cartService.cartOrders;
-      console.log(this.cartOrders)
+      console.log(this.cartOrders);
       this.router.navigate(["/orders"]);
-      this.firebaseService.writeToDatabase("orders", {...form.value,...this.cartOrders});
+      this.firebaseService.writeToDatabase("orders", {
+        ...form.value,
+        ...this.cartOrders,
+        ...{ grandTotalPrice: this.cartService.grandTotalPrice }
+      });
     }
   }
 }

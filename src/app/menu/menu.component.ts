@@ -25,6 +25,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
+    this.getMenu();
+  }
+
+  getMenu() {
     this.firebaseService.db
       .collection("menu")
       .doc("menuDoc")

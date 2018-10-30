@@ -34,7 +34,7 @@
                         <mat-icon (click)="decrementQuantity(i)">remove_circle</mat-icon>
                     </div>
                     <div class="col-3">
-                        <p>$ {{order.newPrice}}</p>
+                        <p>$ {{order.totalPrice}}</p>
                     </div>
                     <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
                 </div>
@@ -45,11 +45,11 @@
                     </h5>
                 </div>
                 <div class="submitButton">
-                    <button [hidden]="showCheckOut" color="primary" mat-raised-button id="checkout" (click)="checkOut()" [disabled]="!totalPrice">
+                    <button [hidden]="showCheckOut" color="primary" mat-raised-button id="checkout" (click)="checkOut()"
+                        [disabled]="!totalPrice">
                         Check out
                     </button>
                 </div>
-
 
             </mat-card>
         </div>
