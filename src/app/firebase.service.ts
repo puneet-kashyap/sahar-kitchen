@@ -14,7 +14,8 @@ export class FirebaseService {
     projectId: "sahar-kitchen",
     databaseURL: "https://sahar-kitchen.firebaseio.com",
   };
-  app = firebase.initializeApp(this.config);
+  
+  app = firebase.apps.length ? firebase.app() : firebase.initializeApp(this.config)
   db = firebase.firestore();
 
   writeToDatabase(collection, dataObj) {

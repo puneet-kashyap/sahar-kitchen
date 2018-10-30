@@ -16,8 +16,8 @@ export class OrderConfirmationComponent implements OnInit {
     this.cartOrders = this.cartService.cartOrders;
     console.table(this.cartOrders);
     this.cartOrders.forEach((item) => {
-      if(item.newPrice){
-        this.itemTotals = this.itemTotals + parseFloat(item.newPrice);
+      if(item.totalPrice){
+        this.itemTotals = this.itemTotals + parseFloat(item.totalPrice);
       }
     })
   }

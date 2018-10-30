@@ -1,43 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../cart.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
   companyName = "Kohinoor Restaurant";
-  orders:{}[]=[];
+  orders: {}[] = [];
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cartService.getOrders.subscribe(
-      order => {
-        this.orders.push(order);
-      }
-    )
-  };
-
-  onMenu(){
-    console.log('Menu icon clicked');
+    this.cartService.getOrders.subscribe(order => {
+      this.orders.push(order);
+    });
   }
 
-  onRestaurantMenu(){
-    console.log('Restaurant menu icon clicked');
+  onMenu() {
+    console.log("Menu icon clicked");
   }
 
-  cartBadge(){
-    if(this.orders){
-      return this.orders.length;
-    }
-    return 0;
+  onRestaurantMenu() {
+    console.log("Restaurant menu icon clicked");
   }
 
-  hideBadge(){
-    if(!this.orders){
-      return true;  
-    }
-  };
+  cartBadge() {
+    return this.orders.length;
+  }
 
+  hideBadge() {
+    return this.orders.length < 1 ? true : false;
+  }
 }
