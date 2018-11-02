@@ -46,7 +46,7 @@
             class="captcha"
             required
             (resolved)="resolved($event)" 
-            siteKey="6LccyHQUAAAAAPGFE6xQ4szcOJ9F7aH29jKVx6LF">
+            [siteKey]="captchaKey">
           </re-captcha>
           <button mat-raised-button type="submit" color="primary" [disabled]="!f.valid">
             Reserve Now
