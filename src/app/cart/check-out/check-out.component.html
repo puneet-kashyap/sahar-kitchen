@@ -17,7 +17,7 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input ngModel name="date" [min]="minDate" matInput [matDatepicker]="picker" placeholder="Choose a date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -34,12 +34,16 @@
         <textarea ngModel name="comment" matInput placeholder="Leave a comment"></textarea>
       </mat-form-field>
 
+      <re-captcha 
+        ngModel name="captcha" class="captcha" required (resolved)="resolved($event)" 
+        [siteKey]="captchaKey">
+      </re-captcha>
+
       <div class="submit">
-        <button mat-raised-button type="submit" color="primary" >
+        <button mat-raised-button type="submit" color="primary" [disabled]="!f.valid">
           Confirm Order
         </button>
       </div>
-
 
     </form>
 

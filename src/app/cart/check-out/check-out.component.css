@@ -23,3 +23,9 @@ h3, .submit{
   color: #3f51b5;
   text-align: center;
 }
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
