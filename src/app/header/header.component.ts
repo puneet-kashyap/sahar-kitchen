@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from "../cart.service";
-
+import { environment } from '../../environments/environment';
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  companyName = "Kohinoor Restaurant";
+  companyName = `${environment.companyName} Restaurant`;
   orders: {}[] = [];
   constructor(private cartService: CartService) {}
 

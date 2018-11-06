@@ -2,7 +2,7 @@
   <mat-card>
     <div class="row order-confirm">
       <div class="col-12">
-          <h4>Order Confirmation # 39383</h4>
+          <h4>Order Confirmation # {{orderConfirmationNumber}}</h4>
       </div>
       <div class="col-12">
           <p>Your order has been confirmed.</p>
@@ -44,12 +44,12 @@
 
       <div class="row thanks">
         <p>Thank you for ordering with us. <br>
-          If you have any questions or comments, please call us at +1-519-888-0455
+          If you have any questions or comments, please call us at {{phone}}
         </p>
       </div>
       <div class="row signature">
           <p>
-            <b>Kohinoor Restaurant</b>
+            <b>{{companyName}}</b>
           </p>
       </div>
   </mat-card>
