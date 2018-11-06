@@ -37,12 +37,16 @@ export class CheckOutComponent implements OnInit {
     window.scroll(0, 0);
   }
 
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response`);
+  }
+
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.router.navigate(['/orders']);
-      this.firebaseService.writeToDatabase('orders', {
+      this.firebaseService.writeToDatabase('Orders', {
         ...form.value,
-        ...this.cartService.cartOrders,
+        ...{order: this.cartService.cartOrders},
         ...{ grandTotalPrice: this.cartService.grandTotalPrice }
       });
     }
