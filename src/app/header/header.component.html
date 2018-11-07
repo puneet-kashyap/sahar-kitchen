@@ -1,4 +1,4 @@
-<div class="container-fluid sticky">
+<header class="container-fluid sticky">
   <div class="row first-row">
     <div id="logo-name">
       <h1>
@@ -10,12 +10,12 @@
       <mat-icon [matBadgeHidden]="hideBadge()" [matBadge]="cartBadge()">shopping_cart</mat-icon>
     </a>
   </div>
-  <div class="row second-row">
+  <nav class="row second-row">
     <a routerLink="/" routerLinkActive="active">Home
       <span class="sr-only">(current)</span>
     </a>
     <a routerLink="/flyer" routerLinkActive="active">Menu</a>
     <a routerLink="/reservations" routerLinkActive="active">Reservations</a>
     <a routerLink="/contact" routerLinkActive="active">Visit Us</a>
-  </div>
-</div>
+  </nav>
+</header>

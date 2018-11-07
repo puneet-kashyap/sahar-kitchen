@@ -34,10 +34,11 @@ h3{
     padding: 10px;
 }
 
-/* .flex-row{
-    display: flex;
-    flex-wrap: wrap;
-} */
+.title {
+    text-align: center;
+    color: aliceblue;
+    padding: 15px;
+}
 
 .mat-raised-button{
     min-width: 5px;
